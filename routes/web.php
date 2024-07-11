@@ -1,15 +1,10 @@
 <?php
 
-use App\Http\Controllers\PrimerControlador;
-use App\Http\Controllers\SegundoControlador;
+use App\Http\Controllers\Dashboard\PostController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('welcome');
 });
 
-
-Route::get('test', [PrimerControlador::class, 'index']);
-
-Route::get('otro/{post}', [PrimerControlador::class, 'otro']);
-// Route::resource('post', PrimerControlador::class);
+Route::resource('post', PostController::class);
