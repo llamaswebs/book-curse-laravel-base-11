@@ -37,7 +37,7 @@ class CategoryController extends Controller
     {
         Category::create($request->validated());
 
-        return to_route('category.index');
+        return to_route('category.index')->with('status', 'Category creada');
     }
 
     /**
@@ -62,9 +62,9 @@ class CategoryController extends Controller
     public function update(PutRequest $request, Category $category)
     {
 
-      
+
         $category->update($request->validated());
-        return to_route('category.index');
+        return to_route('category.index')->with('status', 'Category  actualizada');
     }
 
     /**
@@ -76,6 +76,6 @@ class CategoryController extends Controller
         $category->delete();
 
         // Redirigir o responder con un mensaje de éxito
-        return to_route('category.index');
+        return to_route('category.index')->with('status', 'Category  eliminada');
     }
 }

@@ -38,7 +38,7 @@ class PostController extends Controller
     {
         Post::create($request->validated());
 
-        return to_route('post.index');
+        return to_route('post.index')->with('status', 'Post creada');
     }
 
     /**
@@ -74,7 +74,7 @@ class PostController extends Controller
         //imagen
         $post->update($data);
 
-        return to_route('post.index');
+        return to_route('post.index')->with('status', 'Post  actualizada');;
     }
 
     /**
@@ -86,6 +86,6 @@ class PostController extends Controller
         $post->delete($post);
 
         // Redirigir o responder con un mensaje de éxito
-        return to_route('post.index');
+        return to_route('post.index')->with('status', 'Post eliminada');
     }
 }

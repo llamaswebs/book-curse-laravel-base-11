@@ -3,7 +3,8 @@
 @section('content')
     <div class="bg-gray-100 py-10 px-4">
         <div class="overflow-x-auto w-full max-w-7xl mx-auto px-6">
-            <h1 class="text-2xl font-bold mb-6">Titulo Posted Category</h1>
+            <h1 class="text-2xl font-bold mb-6">Titulo Posted
+                Categoría</h1>
 
             <a href="{{ route('category.create') }}"
                 class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mb-4 inline-block">
