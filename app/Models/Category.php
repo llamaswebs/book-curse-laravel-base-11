@@ -9,6 +9,8 @@ class Category extends Model
 {
     use HasFactory;
 
+    protected $table = 'categories'; // Nombre correcto de la tabla
+    public $timestamps = false;
     protected  $fillable = ['title', 'slug'];
 
     function  posts()
