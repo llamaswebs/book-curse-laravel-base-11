@@ -23,14 +23,20 @@
     </section>
     <div class="fixed bottom-0 left-0 w-full">
         @if (session('status'))
-            @if (session('status') == 'Post eliminada' || session('status') == 'Category eliminada')
-                <div class="bg-red-500 text-white p-4 text-center text-3xl font-bold">
+            @if (session('status') == 'Post  actualizada' || session('status') == 'Category  actualizada')
+                <div class="bg-yellow-500 text-white p-4 text-center text-3xl font-bold">
                     {{ session('status') }}
                 </div>
             @else
-                <div class="bg-green-500 text-white p-4 text-center text-3xl font-bold">
-                    {{ session('status') }}
-                </div>
+                @if (session('status') == 'Post eliminada' || session('status') == 'Category eliminada')
+                    <div class="bg-red-500 text-white p-4 text-center text-3xl font-bold">
+                        {{ session('status') }}
+                    </div>
+                @else
+                    <div class="bg-green-500 text-white p-4 text-center text-3xl font-bold">
+                        {{ session('status') }}
+                    </div>
+                @endif
             @endif
         @endif
     </div>
